@@ -1,24 +1,8 @@
-# README
+# Till Handraise Web
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Set up the DB
+- `$ brew install postgresql`
+- `$ brew services start postgresql`
+- `$ createdb dev_till_core`
+- `$ createuser -P -s -e till` (when it prompts you to create a password user till@321)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
