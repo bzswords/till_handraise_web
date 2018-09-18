@@ -1,0 +1,6 @@
+<% heading_tag = heading_tag || :h1 %>
+<div class="TagLine">
+  <%= content_tag heading_tag, :class => "TagLine__heading" do %>
+    <%= body %>
+  <% end %>
+</div>
