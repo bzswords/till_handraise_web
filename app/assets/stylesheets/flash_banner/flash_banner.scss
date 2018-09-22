@@ -1,0 +1,23 @@
+@import './mixins/colors';
+
+.FlashBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 30px;
+  width: 100%;
+
+  p {
+    color: white;
+    margin: 0;
+  }
+
+  &__notice {
+    background-color: $tl-turqoise;
+  }
+
+  &__alert {
+    background-color: $tl-error;
+  }
+}

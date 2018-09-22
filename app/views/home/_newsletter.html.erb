@@ -5,7 +5,26 @@
     and tricks for how to teach your kids about money
   </p>
   <div class="Newsletter__form-control">
-    <%= render partial: 'shared/form/text_input', locals: { placeholder: 'Email address' } %>
-    <%= render partial: 'shared/form/button', locals: { value: 'Submit' } %>
+    <%= form_tag leads_path do %>
+      <%= 
+        render(
+          partial: 'shared/form/text_input',
+          locals: {
+            placeholder: 'Email address',
+            name: 'email'
+          }
+        )
+      %>
+      <%=
+        render(
+          partial: 'shared/form/button',
+          locals: {
+            value: 'Submit',
+            type: 'submit',
+            name: "submit"
+          }
+        )
+      %>
+    <% end %>
   </div>
 </section>
