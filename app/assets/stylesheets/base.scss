@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, p {
@@ -9,6 +10,8 @@ h1, h2, h3, h4, p {
   font-family: 'Raleway', sans-serif;
 }
 
-h1, h2, h3, h4, p, a {
+h1, h2, h3, h4, p, a, li {
   font-family: 'Raleway', sans-serif;
 }
+
+h3 { font-size: 25px; }
