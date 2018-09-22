@@ -1,0 +1,9 @@
+@import './mixins/breakpoints';
+
+.Logo {
+  padding-left: 20px;
+
+  @media (min-width: $desktop-width) {
+    padding-left: 0;
+  }
+}

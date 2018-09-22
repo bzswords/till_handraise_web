@@ -1,0 +1,20 @@
+@import "./mixins/colors";
+
+.Tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: $tl-turqoise;
+  border-radius: 0 40px 0 40px;
+  padding: 0 30px;
+  box-shadow: -3px 0 14px 0 rgba(0, 0, 0, 0.13);
+
+  &__body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+  }
+}

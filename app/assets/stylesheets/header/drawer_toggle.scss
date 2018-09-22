@@ -1,0 +1,7 @@
+@import './mixins/breakpoints';
+
+.DrawerToggle {
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}

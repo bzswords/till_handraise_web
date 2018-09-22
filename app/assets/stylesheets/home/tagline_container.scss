@@ -1,0 +1,13 @@
+.TaglineContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+
+  &__root {
+    position: relative;
+    max-width: 315px;
+    min-width: 315px;
+    top: 20px;
+  }
+}
