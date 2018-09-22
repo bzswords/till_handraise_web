@@ -1,0 +1,20 @@
+@import "./mixins/colors";
+
+.Newsletter {
+  padding: 40px 30px;
+  background-color: $tl-navy;
+
+  h2, p {
+    color: white;
+  }
+
+  &__form-control {
+    display: flex;
+    flex-direction: column;
+
+    .TlButton {
+      margin-top: 24px;
+      width: 112px;
+    }
+  }
+}
