@@ -1,0 +1,12 @@
+@import './mixins/colors';
+
+.Footer {
+  background-color: $tl-dark-grey;
+  color: white;
+  
+  margin: 0;
+  padding: 60px 53.3px;
+
+  ul { margin: 0; }
+  a { color: white; text-decoration: none;}
+}

@@ -1,0 +1,16 @@
+.FooterNav {
+  ul {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+
+   li {
+     width: 50%;
+     text-align: center;
+     padding: 20px 0;
+
+     font-size: 22px;
+     font-weight: 600;
+   }
+  }
+}
