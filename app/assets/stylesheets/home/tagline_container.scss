@@ -1,3 +1,5 @@
+@import "./mixins/breakpoints";
+
 .TaglineContainer {
   display: flex;
   align-items: center;
@@ -9,5 +11,22 @@
     max-width: 315px;
     min-width: 315px;
     top: 20px;
+
+    @media (min-width: $desktop-width) {
+      position: absolute;
+      right: 0;
+      top: 160px;
+      min-width: 526px;
+
+      .Tagline {
+        border-radius: 0 0 0 80px;
+        box-shadow: -3px 10px 14px 0 rgba(0, 0, 0, 0.13);
+        padding: 0 30px 0 60px;
+
+        &__body {
+          text-align: left;
+        }
+      }
+    }
   }
 }
