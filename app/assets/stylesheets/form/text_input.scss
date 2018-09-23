@@ -1,8 +1,11 @@
+@import './mixins/colors';
+
 .TlTextInput {
   border-radius: 10px;
   padding: 19px 30px;
   font-size: 16px;
   font-family: 'Raleway', sans-serif;
+  color: $tl-dark-grey;
 
   outline: 0;
   margin: 0;

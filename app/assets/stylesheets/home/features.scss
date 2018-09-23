@@ -1,4 +1,5 @@
 @import "./mixins/colors";
+@import "./mixins/breakpoints";
 
 .Features {
   padding: 40px 30px;
@@ -18,6 +19,20 @@
   
     h4 {
       color: $tl-navy;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+
+    h3 {
+      width: 100%;
+      font-size: 45px;
+    }
+
+    &__item {
+      width: 50%;
     }
   }
 }
