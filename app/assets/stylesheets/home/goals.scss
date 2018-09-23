@@ -1,7 +1,39 @@
 @import "./mixins/colors";
+@import "./mixins/breakpoints";
 
 .Goals {
   padding: 40px 30px;
   text-align: left;
   background-color: $tl-baby-blue;
+
+  @media (min-width: $desktop-width) {
+    padding: 40px 98px;
+    display: flex;
+
+    h3 {
+      font-size: 30px
+    }
+
+    li {
+      font-size: 25px;
+    }
+  }
+
+  &__placeholder {
+    width: 300px;
+    height: 341px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 10px 13px 14px 0 rgba(0, 0, 0, 0.13);
+    background-color: grey;
+
+    @media (min-width: $desktop-width) {
+      order: 1;
+      max-width: 527px;
+      min-width: 527px;
+      height: 600px;
+      margin-left: 20px;
+      box-shadow: -10px 10px 14px 0 rgba(0, 0, 0, 0.13);
+    }
+  }
 }
