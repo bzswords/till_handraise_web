@@ -1,14 +1,35 @@
+@import './mixins/breakpoints';
+
 .LeadValueProp {
   padding: 40px 30px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   h3 {
     color: #1daaa6;
     font-weight: 600;
     font-size: 25px;
+    margin-top: 0;
   }
 
   p {
     font-size: 22px;
+    max-width: 746px;
+    margin: 0;
+    text-align: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 100px 30px;
+
+    h3 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 25px;
+    }
   }
 }

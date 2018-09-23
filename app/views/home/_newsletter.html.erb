@@ -8,15 +8,17 @@
   </div>
   <div class="Newsletter__form-control">
     <%= form_tag leads_path do %>
-      <%= 
-        render(
-          partial: 'shared/form/text_input',
-          locals: {
-            placeholder: 'Email address',
-            name: 'email'
-          }
-        )
-      %>
+      <div class="Newsletter__text-input-container">
+        <%=
+          render(
+            partial: 'shared/form/text_input',
+            locals: {
+              placeholder: 'Email address',
+              name: 'email'
+            }
+          )
+        %>
+      </div>
       <%=
         render(
           partial: 'shared/form/button',

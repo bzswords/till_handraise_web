@@ -1,7 +1,9 @@
-<input
-  class="TlTextInput <%= local_assigns[:classes]&.joins(' ') %>"
-  name="<%= local_assigns[:name] %>"
-  type="<%= local_assigns[:type] || 'text' %>"
-  value="<%= local_assigns[:value] %>"
-  placeholder="<%= local_assigns[:placeholder] %>"
-/>
+<div class="TlTextInput">
+  <input
+    class="TlTextInput__input <%= local_assigns[:input_classes]&.joins(' ') %>"
+    name="<%= local_assigns[:name] %>"
+    type="<%= local_assigns[:type] || 'text' %>"
+    value="<%= local_assigns[:value] %>"
+    placeholder="<%= local_assigns[:placeholder] %>"
+  />
+</div>
