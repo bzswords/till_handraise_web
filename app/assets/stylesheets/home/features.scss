@@ -5,8 +5,36 @@
   padding: 40px 30px;
   background-color: $tl-pink;
 
+  .Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h3 {
+    max-width: 500px;
+
+    @media (min-width: $desktop-width) {
+      max-width: 1000px;
+      font-size: 45px;
+    }
+  }
+
   h3, h4 {
     text-align: center;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $desktop-width) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__item {
@@ -14,25 +42,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     margin-top: 30px;
+
+    @media (min-width: $desktop-width) {
+      width: 45%;
+    }
   
     h4 {
       color: $tl-navy;
+
+      @media (min-width: $desktop-width) {
+        font-size: 25px;
+      }
+    }
+
+    p {
+      @media (min-width: $desktop-width) {
+        font-size: 16px;
+      }
     }
   }
 
-  @media (min-width: $desktop-width) {
+  &__heading {
     display: flex;
-    flex-wrap: wrap;
-
-    h3 {
-      width: 100%;
-      font-size: 45px;
-    }
-
-    &__item {
-      width: 50%;
-    }
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }

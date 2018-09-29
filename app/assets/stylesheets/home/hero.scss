@@ -1,6 +1,7 @@
 @import "./mixins/breakpoints";
 
 .Hero {
+  position: relative;
 
   @media (min-width: $desktop-width) {
     display: flex;
@@ -16,6 +17,11 @@
       width: 80%;
       border-radius: 0 0 80px 0;
     }
+  }
+
+  .Content {
+    position: relative;
+    max-width: 1600px;
   }
 
   .TaglineContainer {

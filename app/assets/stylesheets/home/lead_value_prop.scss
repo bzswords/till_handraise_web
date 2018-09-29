@@ -2,10 +2,13 @@
 
 .LeadValueProp {
   padding: 40px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  .Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   h3 {
     color: #1daaa6;

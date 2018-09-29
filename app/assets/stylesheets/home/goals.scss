@@ -2,27 +2,53 @@
 @import "./mixins/breakpoints";
 
 .Goals {
-  padding: 40px 30px;
-  text-align: left;
   background-color: $tl-baby-blue;
+  padding: 40px 30px;
 
   @media (min-width: $desktop-width) {
     padding: 40px 98px;
+  }
+
+  .Content {
+    text-align: left;
+
+    @media (min-width: $desktop-width) {
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 30px
+      }
+    }
+  }
+
+  &__copy {
+    max-width: 700px;
+  }
+
+  &__list-item {
     display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    h3 {
-      font-size: 30px
-    }
-
-    li {
+    @media (min-width: $desktop-width) {
       font-size: 25px;
+      margin-bottom: 30px;
     }
+  }
+
+  &__list-dot {
+    width: 15px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: $tl-navy;
+    margin-right: 20px;
   }
 
   &__placeholder {
     width: 300px;
     height: 341px;
-    margin: auto;
+    margin: 0;
     border-radius: 20px;
     box-shadow: 10px 13px 14px 0 rgba(0, 0, 0, 0.13);
     background-color: grey;
@@ -32,7 +58,6 @@
       max-width: 527px;
       min-width: 527px;
       height: 600px;
-      margin-left: 20px;
       box-shadow: -10px 10px 14px 0 rgba(0, 0, 0, 0.13);
     }
   }
