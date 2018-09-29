@@ -6,9 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
     var emailInput = document.getElementById('email-input');
     var value = emailInput.value;
 
-    if (value.length === 0) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var isEmail = re.test(String(value).toLowerCase())
+  
+    if ((value.length === 0) || (!isEmail)) {
       var component = document.getElementsByClassName('TlTextInput')[0];
       component.classList.add('TlTextInput__error');
+    } else {
+      this.submit();
     }
   }
 
