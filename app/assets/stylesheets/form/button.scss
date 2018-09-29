@@ -19,6 +19,10 @@
   -o-appearance: none;
   appearance: none;
 
+  &:focus {
+    background-color: $tl-orange-hov;
+  }
+
   @media (hover: hover) {
     &:hover {
       cursor: pointer;
