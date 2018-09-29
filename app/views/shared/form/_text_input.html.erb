@@ -1,5 +1,6 @@
 <div class="TlTextInput">
   <input
+    id="<%= local_assigns[:input_id] %>"
     class="TlTextInput__input <%= local_assigns[:input_classes]&.joins(' ') %>"
     name="<%= local_assigns[:name] %>"
     type="<%= local_assigns[:type] || 'text' %>"

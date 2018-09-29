@@ -27,4 +27,12 @@
     -o-appearance: none;
     appearance: none;
   }
+
+  &__error {
+    border: 2px solid $tl-error;
+
+    .TlTextInput__input {
+      color: $tl-error;
+    }
+  }
 }
