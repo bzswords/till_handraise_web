@@ -1,5 +1,7 @@
 class LeadsController < ApplicationController
 
+  after_action :subscribe_to_mailing_list, only: :create
+
   def create
     lead = Lead.find_or_create_by(email: params[:email])
 
@@ -10,6 +12,12 @@ class LeadsController < ApplicationController
     end
 
     redirect_to root_path
+  end
+
+  private
+
+  def subscribe_to_mailing_list
+    MailingListSubscriber.call(email: params[:email])
   end
 
 end
