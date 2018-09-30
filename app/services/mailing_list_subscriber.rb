@@ -26,15 +26,23 @@ class MailingListSubscriber
   end
 
   def call!
-    client.lists.subscribe(
-      mailing_list,
-      { "email" => email }
-    )
+    subscribe
   end
 
   private
 
   def client
     @client ||= Mailchimp::API.new(MAILCHIMP_API_KEY)
+  end
+
+  def subscribe
+    if Rails.configuration.subscribe_to_mailing_list
+      client.lists.subscribe(
+        mailing_list,
+        { "email" => email }
+      )
+    else
+      Rails.logger.info "No subscriptions in #{Rails.env} environment"
+    end
   end
 end
