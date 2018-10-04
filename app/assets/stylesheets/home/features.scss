@@ -46,10 +46,22 @@
 
     @media (min-width: $desktop-width) {
       width: 45%;
+      flex-direction: row;
     }
-  
+  }
+
+  &__item-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 25px;
+    max-width: 350px;
+
     h4 {
       color: $tl-navy;
+      margin: 0;
+      text-align: left;
 
       @media (min-width: $desktop-width) {
         font-size: 25px;

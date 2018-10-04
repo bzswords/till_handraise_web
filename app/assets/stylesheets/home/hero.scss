@@ -20,11 +20,19 @@
   }
 
   .Content {
+    display: flex;
+    flex-direction: column;
     position: relative;
     max-width: 1600px;
+
+    @media (min-width: $desktop-width) {
+      flex-direction: row;
+    }
   }
 
   .TaglineContainer {
-    order: 1;
+    @media (min-width: $desktop-width) {
+      order: 1;
+    }
   }
 }
