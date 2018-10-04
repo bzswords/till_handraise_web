@@ -12,15 +12,16 @@ development:
 
 production: &production
   <<: *default
-  username: <%= ENV['APP_DATABASE_USER'] || 'till' %>
-  password: <%= ENV['APP_DATABASE_PASS'] || 'till@321' %>
-  database: <%= ENV['APP_DATABASE_NAME'] || 'staging_till_core' %>
-  host: <%= ENV['APP_DATABASE_HOST'] || 'localhost' %>
+  username: <%= ENV['RDS_USERNAME'] || 'till' %>
+  password: <%= ENV['RDS_PASSWORD'] || 'till@321' %>
+  database: <%= ENV['RDS_DB_NAME'] || 'staging_till_core' %>
+  host: <%= ENV['RDS_HOSTNAME'] || 'localhost' %>
+  port: <%= ENV['RDS_PORT'] %>
 
 staging: &staging
   <<: *default
   username: till
-  password: till@321
+  password: till321A
   host: localhost
   database: staging_till_core
 
