@@ -8,6 +8,12 @@
     display: flex;
 
     ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      min-width: 450px;
+
       li {
         float: left;
         padding-left: 30px;

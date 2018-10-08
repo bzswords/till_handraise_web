@@ -1,6 +1,8 @@
 <input
+  id="<%= local_assigns[:input_id] %>"
   class="TlButton <%= local_assigns[:classes]&.joins(' ') %>"
   name="<%= local_assigns[:name] %>"
   type="<%= local_assigns[:type] || 'button' %>"
   value="<%= local_assigns[:value] || 'Submit' %>"
+  data-scroll="<%= local_assigns[:data_scroll] %>"
 />

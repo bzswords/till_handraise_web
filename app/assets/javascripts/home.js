@@ -1,4 +1,26 @@
-document.addEventListener("DOMContentLoaded", function() {
+function mountSubscribeButton() {
+  var offset = 0;
+  var call;
+  function scroll() {
+    if ((offset - window.scrollY) > 0) {
+      window.scrollTo(0, window.scrollY + 40)
+    }
+    else {
+      clearInterval(call)
+    }
+  };
+
+  function onClick() {
+    event.preventDefault();
+    call = setInterval(scroll, 1);
+    target = event.srcElement.dataset.scroll;
+    offset = document.getElementById(target).offsetTop;
+  }
+
+  document.querySelector('#subscribe-btn').addEventListener("click", onClick);
+}
+
+function mountNewsletterForm() {
   var onSubmit = function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -27,4 +49,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var textElem = document.getElementById('email-input');
   textElem.addEventListener('input', onChange);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  mountSubscribeButton();
+  mountNewsletterForm();
 });
