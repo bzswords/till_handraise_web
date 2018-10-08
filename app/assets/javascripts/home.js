@@ -1,3 +1,20 @@
+var EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+var cache = {
+  subscribeButton: null,
+  emailInput: null,
+  formInput: null,
+};
+
+function initCache() {
+  cache.emailInput = document.getElementsByClassName('TlTextInput')[0];
+  cache.subscribeButton = document.querySelector('#subscribe-btn');
+  cache.formInput = document.getElementById('newsletter-form');
+}
+
+function clearState() {
+  cache.emailInput.classList.remove('TlTextInput__error');
+}
+
 function mountSubscribeButton() {
   var offset = 0;
   var call;
@@ -10,48 +27,41 @@ function mountSubscribeButton() {
     }
   };
 
-  function onClick() {
-    event.preventDefault();
-    call = setInterval(scroll, 1);
-    target = event.srcElement.dataset.scroll;
-    offset = document.getElementById(target).offsetTop;
-  }
+  cache.subscribeButton.addEventListener(
+    "click",
+    function(e) {
+      e.preventDefault();
+      clearState();
 
-  document.querySelector('#subscribe-btn').addEventListener("click", onClick);
+      call = setInterval(scroll, 1);
+      target = event.srcElement.dataset.scroll;
+      offset = document.getElementById(target).offsetTop;
+    }
+  );
 }
 
 function mountNewsletterForm() {
-  var onSubmit = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    var emailInput = document.getElementById('email-input');
-    var value = emailInput.value;
-
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var isEmail = re.test(String(value).toLowerCase())
-  
-    if ((value.length === 0) || (!isEmail)) {
-      var component = document.getElementsByClassName('TlTextInput')[0];
-      component.classList.add('TlTextInput__error');
-    } else {
-      this.submit();
-    }
-  }
-
-  var onChange = function(e) {
-    var component = document.getElementsByClassName('TlTextInput')[0];
-    component.classList.remove('TlTextInput__error');
-  }
-
-  var elem = document.getElementById('newsletter-form');
-  elem.addEventListener("submit", onSubmit, false);
-
-  var textElem = document.getElementById('email-input');
-  textElem.addEventListener('input', onChange);
+  cache.formInput.addEventListener(
+    "submit",
+    function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var value = String(cache.emailInput.value).toLowerCase();
+      var isEmail = EMAIL_REGEX.test(value);
+    
+      if ((value.length === 0) || (!isEmail)) {
+        cache.emailInput.classList.add('TlTextInput__error');
+      } else {
+        this.submit();
+      }
+    },
+    false
+  );
+  cache.emailInput.addEventListener('input', function() { clearState() });
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+  initCache();
   mountSubscribeButton();
   mountNewsletterForm();
 });
