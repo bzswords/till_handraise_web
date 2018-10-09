@@ -1,12 +1,17 @@
 @import './mixins/colors';
+@import "./mixins/breakpoints";
 
 .Footer {
   background-color: $tl-dark-grey;
   color: white;
   
   margin: 0;
-  padding: 60px 53.3px;
+  padding: 40px 53.3px;
 
   ul { margin: 0; }
   a { color: white; text-decoration: none;}
+
+  @media (min-width: $desktop-width) {
+    padding: 60px 53.3px;
+  }
 }

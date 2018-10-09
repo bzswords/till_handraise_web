@@ -5,6 +5,8 @@
   padding: 40px 30px;
   background-color: $tl-navy;
 
+  h2 { font-size: 30px; }
+
   h2, p {
     color: white;
   }
@@ -30,7 +32,6 @@
     display: flex;
     padding: 54.2px 108.9px;
 
-    h2 { font-size: 30px; }
     p  { font-size: 18px; }
 
     &__copy {
