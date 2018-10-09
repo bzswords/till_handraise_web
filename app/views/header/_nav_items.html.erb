@@ -1,0 +1,17 @@
+<ul>
+  <li><a href="#welcome">About Us</a></li>
+  <li><a href="#menu">Newsletters</a></li>
+  <li>
+    <%= 
+      render(
+        partial: 'shared/form/button',
+        locals: {
+          value: 'Subscribe',
+          type: 'button',
+          input_id: 'subscribe-btn',
+          data_scroll: 'newsletter'
+        }
+      )
+    %>
+  </li>
+</ul>

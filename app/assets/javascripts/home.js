@@ -3,12 +3,17 @@ var cache = {
   subscribeButton: null,
   emailInput: null,
   formInput: null,
+  header: null,
+  drawerToggle: null,
+  headerIsOpen: false
 };
 
 function initCache() {
   cache.emailInput = document.getElementsByClassName('TlTextInput')[0];
   cache.subscribeButton = document.querySelector('#subscribe-btn');
   cache.formInput = document.getElementById('newsletter-form');
+  cache.header = document.getElementsByClassName('Header')[0];
+  cache.drawerToggle = document.getElementById('drawer-toggle');
 }
 
 function clearState() {
@@ -60,8 +65,24 @@ function mountNewsletterForm() {
   cache.emailInput.addEventListener('input', function() { clearState() });
 }
 
+function mountDrawerToggle() {
+  cache.drawerToggle.addEventListener(
+    "click",
+    function() {
+      if (cache.headerIsOpen) {
+        cache.header.classList.remove('Header-mobile');
+        cache.headerIsOpen = false;
+      } else {
+        cache.header.classList.add('Header-mobile');
+        cache.headerIsOpen = true;
+      }
+    }
+  )
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   initCache();
   mountSubscribeButton();
   mountNewsletterForm();
+  mountDrawerToggle();
 });
