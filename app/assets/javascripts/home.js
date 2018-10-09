@@ -64,7 +64,7 @@ function mountNewsletterForm() {
       if ((value.length === 0) || (!isEmail)) {
         cache.emailInput.classList.add('TlTextInput__error');
       } else {
-        var url = '<%= Rails.configuration.base_url %>/leads';
+        var url = '/leads';
         var fetchData = {
           method: 'POST',
           body: JSON.stringify({
