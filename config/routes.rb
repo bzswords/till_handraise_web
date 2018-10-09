@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  root to: 'home#index'
+  get 'health', to: 'application#health'
+
+  resources :leads, only: [:create]
 
   scope :module => 'buttercms' do
     get '/categories/:slug' => 'categories#show', :as => :buttercms_category
@@ -12,8 +16,4 @@ Rails.application.routes.draw do
     get '/blog(/page/:page)' => 'posts#index', :defaults => {:page => 1}, :as => :buttercms_blog
     get '/blog/:slug' => 'posts#show', :as => :buttercms_post
   end
-  root to: 'home#index'
-
-  resources :leads, only: [:create]
-
 end

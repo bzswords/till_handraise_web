@@ -91,4 +91,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.base_url = 'http://http://tillhandraiseweb-staging.vpfvqyiqpj.us-west-2.elasticbeanstalk.com'
 end

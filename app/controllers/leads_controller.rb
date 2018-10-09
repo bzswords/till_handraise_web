@@ -1,4 +1,4 @@
-class LeadsController < ApplicationController
+class LeadsController < ApiController
 
   after_action :subscribe_to_mailing_list, only: :create
 
@@ -6,12 +6,12 @@ class LeadsController < ApplicationController
     lead = Lead.find_or_create_by(email: params[:email])
 
     if lead.valid?
-      flash[:notice] = "Successfully signed up for the newsletter!"
+      render json: { id: lead.id }, status: :created
+      return
     else
-      flash[:alert] = "Something went wrong: #{lead.errors.to_a.join(', ')}"
+      render json: { errors: lead.errors.full_messages.join(', ') }, status: :bad_request
+      return
     end
-
-    redirect_to root_path
   end
 
   private
