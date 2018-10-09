@@ -83,7 +83,7 @@ function mountNewsletterForm() {
             if (!resp.ok) {
               cache.emailInput.classList.add('TlTextInput__error');
             } else {
-              console.log('OK')
+              document.getElementById('newsletter').classList.add('Newsletter__success');
             }
           }
         )

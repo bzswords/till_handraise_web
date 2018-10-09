@@ -16,6 +16,10 @@
     width: 100%;
   }
 
+  .Success {
+    display: none;
+  }
+
   &__form-control {
     form {
       display: flex;
@@ -25,6 +29,16 @@
         margin-top: 24px;
         width: 112px;
       }
+    }
+  }
+
+  &__success {
+    .Success {
+      display: flex;
+    }
+
+    .FormControl {
+      display: none;
     }
   }
 
