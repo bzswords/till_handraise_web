@@ -6,8 +6,19 @@
       )
     %>
     <div
-      class="Hero__placeholder"
+      class="Hero__img-container"
       alt="Placeholder until I have the image"
-    />
+    >
+      <img
+        srcset="<%= image_path('home/HERO.png') %> 1019w,
+                <%= image_path('home/HERO@2x.png') %> 2038w,
+                <%= image_path('home/HERO@3x.png') %> 3057w"
+        sizes="(max-width: 800px) 800px,
+               (max-width: 1024px) 1000px,
+               1024px"
+        src="<%= image_path('home/HERO.png') %>"
+        alt="Till is a better way to give your kids money."
+      >
+    </div>
   </div>
 </section>

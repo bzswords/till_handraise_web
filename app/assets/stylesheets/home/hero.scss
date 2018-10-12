@@ -7,15 +7,19 @@
     display: flex;
   }
 
-  &__placeholder {
-    height: 210.1px;
-    box-shadow: 10px 13px 14px 0 rgba(0, 0, 0, 0.13);
-    background-color: grey;
-
+  &__img-container {
     @media (min-width: $desktop-width) {
-      height: 503px;
       width: 80%;
-      border-radius: 0 0 80px 0;
+    }
+
+    img {
+      width: 100%;
+      box-shadow: 10px 13px 14px 0 rgba(0, 0, 0, 0.13);
+
+      @media (min-width: $desktop-width) {
+        width: 100%;
+        border-radius: 0 0 80px 0;
+      }
     }
   }
 
