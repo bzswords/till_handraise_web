@@ -18,8 +18,8 @@
     color: white;
     text-align: center;
 
-    @media (min-width: $desktop-width) {
-      font-size: 45px;
+    @media (min-width: $lg-desktop-width) {
+      font-size: 40px;
     }
   }
 }

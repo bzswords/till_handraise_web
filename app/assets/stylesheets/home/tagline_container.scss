@@ -8,15 +8,14 @@
 
   &__root {
     position: relative;
-    max-width: 315px;
-    min-width: 315px;
-    top: 20px;
+    max-width: 350px;
+    min-width: 350px;
 
     @media (min-width: $desktop-width) {
       position: absolute;
       right: 0;
-      top: 70px;
-      min-width: 475px;
+      bottom: 55px;
+      min-width: 480px;
 
       .Tagline {
         border-radius: 0 0 0 80px;

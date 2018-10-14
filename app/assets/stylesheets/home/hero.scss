@@ -8,17 +8,13 @@
   }
 
   &__img-container {
-    @media (min-width: $desktop-width) {
-      width: 80%;
-    }
+    width: 100%;
 
     img {
       width: 100%;
-      box-shadow: 10px 13px 14px 0 rgba(0, 0, 0, 0.13);
 
       @media (min-width: $desktop-width) {
         width: 100%;
-        border-radius: 0 0 80px 0;
       }
     }
   }
