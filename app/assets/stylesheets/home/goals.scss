@@ -10,10 +10,16 @@
   }
 
   .Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
     text-align: left;
 
     @media (min-width: $desktop-width) {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
 
@@ -33,6 +39,8 @@
   }
 
   &__list-item {
+    margin-bottom: 20px;
+
     @media (min-width: $desktop-width) {
       font-size: 20px;
       margin-bottom: 30px;
