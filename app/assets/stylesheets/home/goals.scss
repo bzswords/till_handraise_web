@@ -15,6 +15,7 @@
     @media (min-width: $desktop-width) {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       h3 {
         font-size: 25px;
@@ -27,24 +28,20 @@
     max-width: 700px;
 
     @media (min-width: $desktop-width) {
-      padding-right: 45px;
+      padding-left: 45px;
     }
   }
 
   &__list-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
     @media (min-width: $desktop-width) {
       font-size: 20px;
       margin-bottom: 30px;
     }
   }
 
-  &__list-dot {
-    background-color: $tl-navy;
-    margin-right: 20px;
+  &__list-item-header {
+    color: $tl-navy;
+    font-weight: 600;
   }
 
   &__placeholder {
@@ -56,10 +53,9 @@
     background-color: grey;
 
     @media (min-width: $desktop-width) {
-      order: 1;
-      max-width: 475px;
-      min-width: 475px;
-      height: 525px;
+      max-width: 423px;
+      min-width: 423px;
+      height: 484px;
       box-shadow: -10px 10px 14px 0 rgba(0, 0, 0, 0.13);
     }
   }
