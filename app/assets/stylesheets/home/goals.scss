@@ -52,19 +52,24 @@
     font-weight: 600;
   }
 
-  &__placeholder {
-    width: 300px;
-    height: 341px;
+  &__image-container {
+    min-width: 300px;
+    max-width: 300px;
     margin: 0;
-    border-radius: 20px;
-    box-shadow: 10px 13px 14px 0 rgba(0, 0, 0, 0.13);
-    background-color: grey;
 
     @media (min-width: $desktop-width) {
       max-width: 423px;
       min-width: 423px;
-      height: 484px;
-      box-shadow: -10px 10px 14px 0 rgba(0, 0, 0, 0.13);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 10px 13px 14px 0 rgba(0, 0, 0, 0.13);
+
+      @media (min-width: $desktop-width) {
+        box-shadow: -10px 10px 14px 0 rgba(0, 0, 0, 0.13);
+      }
     }
   }
 }
