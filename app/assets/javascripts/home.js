@@ -64,22 +64,10 @@ function mountNewsletterForm() {
       if ((value.length === 0) || (!isEmail)) {
         cache.emailInput.classList.add('TlTextInput__error');
       } else {
-        var fetchData = {
-          method: 'POST',
-          body: JSON.stringify({
-            email: value
-          }),
-          headers: {
-            "X-Requested-With": 'XMLHttpRequest',
-            'X-CSRF-Token': cache.csrfToken,
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-        }
         Rails.ajax({
           url: '/leads',
           type: 'POST',
-          data: `email=${value}`,
+          data: 'email=' + value,
           success: function(resp) {
             document.getElementById('newsletter').classList.add('Newsletter__success');
           },
