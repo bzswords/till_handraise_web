@@ -23,7 +23,7 @@
     @media (min-width: $desktop-width) {
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
 
       min-width: 450px;
       height: inherit;
