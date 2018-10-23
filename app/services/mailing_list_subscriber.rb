@@ -1,14 +1,14 @@
 class MailingListSubscriber
   attr_reader :email, :mailing_list
 
-  def self.call(email:, mailing_list: MAILCHIMP_LIST_ID)
+  def self.call(email:, mailing_list: Rails.configuration.mailchimp.list_id)
     MailingListSubscriber.new(
       email: email,
       mailing_list: mailing_list
     ).call
   end
 
-  def initialize(email:, mailing_list: MAILCHIMP_LIST_ID)
+  def initialize(email:, mailing_list: Rails.configuration.mailchimp.list_id)
     @email = email
     @mailing_list = mailing_list
   end
@@ -32,7 +32,7 @@ class MailingListSubscriber
   private
 
   def client
-    @client ||= Mailchimp::API.new(MAILCHIMP_API_KEY)
+    @client ||= Mailchimp::API.new(Rails.configuration.mailchimp.api_key)
   end
 
   def subscribe

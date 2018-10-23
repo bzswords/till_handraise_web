@@ -16,6 +16,9 @@ module TillHandraiseWeb
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    config.mailchimp = ActiveSupport::OrderedOptions.new
+    config.mailchimp.api_key = ENV['MAILCHIMP_KEY']
+    config.mailchimp.list_id = "1f5cae62f7"
     config.subscribe_to_mailing_list = false
   end
 end
