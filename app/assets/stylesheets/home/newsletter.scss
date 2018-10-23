@@ -22,9 +22,27 @@
 
   .Success {
     display: none;
+
+    @media (min-width: $desktop-width) {
+      padding-left: 50px;
+    }
+
+    &__headline {
+      margin-top: 25px;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    &__social {
+      img {
+        padding-right: 25px;
+      }
+    }
   }
 
   &__form-control {
+    min-height: 145px;
+
     form {
       display: flex;
       flex-direction: column;
@@ -39,6 +57,7 @@
   &__success {
     .Success {
       display: flex;
+      flex-direction: column;
     }
 
     .FormControl {

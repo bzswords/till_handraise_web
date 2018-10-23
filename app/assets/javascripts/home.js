@@ -64,7 +64,6 @@ function mountNewsletterForm() {
       if ((value.length === 0) || (!isEmail)) {
         cache.emailInput.classList.add('TlTextInput__error');
       } else {
-        var url = '/leads';
         var fetchData = {
           method: 'POST',
           body: JSON.stringify({
@@ -77,16 +76,17 @@ function mountNewsletterForm() {
             'Content-Type': 'application/json'
           },
         }
-        fetch(url, fetchData)
-        .then(
-          function(resp) {
-            if (!resp.ok) {
-              cache.emailInput.classList.add('TlTextInput__error');
-            } else {
-              document.getElementById('newsletter').classList.add('Newsletter__success');
-            }
+        Rails.ajax({
+          url: '/leads',
+          type: 'POST',
+          data: `email=${value}`,
+          success: function(resp) {
+            document.getElementById('newsletter').classList.add('Newsletter__success');
+          },
+          error: function(resp) {
+            cache.emailInput.classList.add('TlTextInput__error');
           }
-        )
+        })
       }
     },
     false
