@@ -1,6 +1,6 @@
 <% heading_tag = heading_tag || :h1 %>
 <div class="Tagline">
   <%= content_tag heading_tag, :class => "Tagline__body" do %>
-    <%= body %>
+    <%= body.html_safe %>
   <% end %>
 </div>
