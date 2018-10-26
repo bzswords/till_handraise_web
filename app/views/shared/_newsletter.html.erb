@@ -7,7 +7,7 @@
     </p>
   </div>
   <div class="Newsletter__form-control FormControl">
-    <%= form_tag leads_path, id: 'newsletter-form' do %>
+    <%= form_tag leads_path, id: 'newsletter-form', html: { onsubmit: "onFormSubmit()" } do %>
       <div class="Newsletter__text-input-container">
         <%=
           render(
@@ -26,7 +26,8 @@
           locals: {
             value: 'Subscribe',
             type: 'submit',
-            name: "btnSubmit"
+            name: "btnSubmit",
+            onclick: "blockFormButton(e)"
           }
         )
       %>
