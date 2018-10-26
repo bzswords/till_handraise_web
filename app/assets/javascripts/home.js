@@ -29,10 +29,11 @@ function mountSubscribeButton() {
   var offset = 0;
   var call;
   function scroll() {
-    if ((offset - window.scrollY) > 0) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      clearInterval(call)
+    } else if ((offset - window.scrollY) > 0) {
       window.scrollTo(0, window.scrollY + 40)
-    }
-    else {
+    } else {
       clearInterval(call)
     }
   };
