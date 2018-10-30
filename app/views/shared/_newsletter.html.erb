@@ -1,4 +1,4 @@
-<section id="newsletter" class="Newsletter">
+<section id="newsletter" class="Newsletter" onload="test()">
   <div class="Newsletter__copy">
     <h2>Sign up for our newsletter</h2>
     <p>
@@ -7,7 +7,7 @@
     </p>
   </div>
   <div class="Newsletter__form-control FormControl">
-    <%= form_tag leads_path, id: 'newsletter-form', html: { onsubmit: "onFormSubmit()" } do %>
+    <%= form_tag leads_path, id: 'newsletter-form', data: { remote: true } do %>
       <div class="Newsletter__text-input-container">
         <%=
           render(
@@ -26,8 +26,7 @@
           locals: {
             value: 'Subscribe',
             type: 'submit',
-            name: "btnSubmit",
-            onclick: "blockFormButton(e)"
+            name: "btnSubmit"
           }
         )
       %>

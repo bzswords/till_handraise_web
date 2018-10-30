@@ -58,13 +58,10 @@ function mountNewsletterForm() {
   cache.emailInput.addEventListener('input', function() { clearState() });
 }
 
-function blockFormButton(e) {
+function onFormSubmit(e) {
   e.preventDefault();
-  return false;
-}
+  e.stopPropagation();
 
-function onFormSubmit() {
-  console.log('LALALALALA')
   var emailInput = document.getElementById('email-input');
   var value = emailInput.value;
   var isEmail = EMAIL_REGEX.test(String(value).toLowerCase());
@@ -115,9 +112,12 @@ function onSubscribeClick() {
   offset = document.getElementById(target).offsetTop;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  mutationObserver = new MutationObserver(function(){
-    initCache();
-  });
-  mutationObserver.observe(document.body, {childList: true});
-});
+function mountNewsletterForm() {
+  cache.formInput.addEventListener("submit", onFormSubmit, false);
+  cache.emailInput.addEventListener('input', function() { clearState() });
+
+  document.body.addEventListener
+}
+
+initCache();
+mountNewsletterForm();
