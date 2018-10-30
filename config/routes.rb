@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   get 'health', to: 'application#health'
+  get 'about', to: 'about#index'
 
   resources :leads, only: [:create]
 

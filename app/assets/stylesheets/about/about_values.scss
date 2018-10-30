@@ -1,0 +1,49 @@
+@import './mixins/colors';
+@import "./mixins/breakpoints";
+
+.AboutValues {
+  padding: 20px;
+
+  .Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    @media (min-width: $desktop-width) {
+      flex-direction: row;
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 310px;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+
+    h4 {
+      margin-bottom: 0;
+      color: $tl-navy;
+      font-weight: 400;
+      font-size: 21px;
+    }
+  }
+}

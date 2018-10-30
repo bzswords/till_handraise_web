@@ -1,7 +1,13 @@
 <nav class="HeaderNav mobileHide">
   <ul>
-    <!-- <li><a href="#welcome">About</a></li> -->
-    <!-- <li><a href="#menu">Newsletters</a></li> -->
+    <li>
+      <a href="/about">About</a>
+    </li>
+    <li>
+      <a href="/newsletters">
+        Newsletters
+      </a>
+    </li>
     <li>
       <%= 
         render(
@@ -10,7 +16,8 @@
             value: 'Subscribe',
             type: 'button',
             input_id: 'subscribe-btn',
-            data_scroll: 'newsletter'
+            data_scroll: 'newsletter',
+            onclick: "onSubscribeClick()"
           }
         )
       %>
