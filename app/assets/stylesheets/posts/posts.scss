@@ -1,0 +1,18 @@
+@import "./mixins/colors";
+
+.Posts {
+  padding: 0 20px;
+
+  .Content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__main {
+    margin-right: 100px;
+  }
+
+  &__other {
+    
+  }
+}

@@ -1,17 +1,19 @@
-<h2>Posts</h2>
-
-<!-- List of posts -->
-<% @posts.each do |post| %>
-  <%= render :partial => 'post', :locals => {:post => post} %>
-<% end %>
-
-<!-- Pagination links -->
-<div>
-  <% if @previous_page %>
-    <%= link_to "Prev", buttercms_blog_path(:page => @previous_page) %>
-  <% end %>
-
-  <% if @next_page %>
-    <%= link_to "Next", buttercms_blog_path(:page => @next_page) %>
-  <% end %>
+<div class="PostsHeader">
+  <h1>Latest Newsletter</h1>
+  <h3>Week of October 14, 2018</h3>
 </div>
+
+<div class="Posts">
+  <div class="Content">
+    <main class="Posts__main">
+      <%= @posts.first.body.html_safe %>
+    </main>
+    <div class="Posts__other">
+      <h3>More Newsletters</h3>
+      <div style="width: 315px; height: 200px; background-color: black"></div>
+    </div>
+  </div>
+</div>
+
+<%= render partial: 'shared/newsletter' %>
+<%= javascript_include_tag 'home' %>
