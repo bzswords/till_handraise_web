@@ -7,9 +7,14 @@
 
   ul {
    display: flex;
+   flex-direction: row;
    justify-content: space-between;
    flex-wrap: wrap;
    width: 100%;
+
+   @media (min-width: $desktop-width) {
+     width: 500px;
+   }
 
    li {
      text-align: center;
@@ -17,12 +22,6 @@
 
      font-size: 22px;
      font-weight: 600;
-
-     @media (min-width: $desktop-width) {
-       width: inherit;
-       margin: 0 50px;
-       width: 50%;
-     }
    }
   }
 }

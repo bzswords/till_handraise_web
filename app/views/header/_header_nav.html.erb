@@ -1,10 +1,12 @@
 <nav class="HeaderNav mobileHide">
   <ul>
     <li>
-      <a href="/about">About</a>
+      <a class="HeaderNav__link <%= controller_path == 'about' ? 'HeaderNav__link--active' : '' %>" href="/about">
+        About
+      </a>
     </li>
     <li>
-      <a href="/newsletters">
+      <a class="HeaderNav__link <%= controller_path == 'buttercms/posts' ? 'HeaderNav__link--active' : '' %>" href="/newsletters">
         Newsletters
       </a>
     </li>
