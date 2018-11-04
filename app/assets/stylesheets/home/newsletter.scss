@@ -2,8 +2,21 @@
 @import "./mixins/breakpoints";
 
 .Newsletter {
-  padding: 40px 30px;
   background-color: $tl-navy;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .Content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+
+    @media (min-width: $desktop-width) {
+      flex-direction: row;
+      padding: 54.2px 108.9px;
+    }
+  }
 
   h2 {
     font-size: 30px;
@@ -15,9 +28,19 @@
     color: white;
   }
 
+  p {
+    @media (min-width: $desktop-width) {
+      font-size: 18px;
+    }
+  }
+
   &__text-input-container {
     display: flex;
     width: 100%;
+
+    @media (min-width: $desktop-width) {
+      width: 296px;
+    }
   }
 
   .Success {
@@ -43,13 +66,29 @@
   &__form-control {
     min-height: 145px;
 
+    @media (min-width: $desktop-width) {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      padding-left: 40px;
+    }
+
     form {
       display: flex;
       flex-direction: column;
 
+      @media (min-width: $desktop-width) {
+        flex-direction: row;
+      }
+
       .TlButton {
         margin-top: 24px;
         width: 135px;
+
+        @media (min-width: $desktop-width) {
+          margin-top: 0;
+          margin-left: 20px;
+        }
       }
     }
   }
@@ -65,34 +104,9 @@
     }
   }
 
-  @media (min-width: $desktop-width) {
-    display: flex;
-    padding: 54.2px 108.9px;
-
-    p  { font-size: 18px; }
-
-    &__copy {
+  &__copy {
+    @media (min-width: $desktop-width) {
       max-width: 500px;
-    }
-
-    &__text-input-container {
-      width: 296px;
-    }
-  
-    &__form-control {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-      padding-left: 40px;
-
-      form {
-        flex-direction: row;
-
-        .TlButton {
-          margin-top: 0;
-          margin-left: 20px;
-        }
-      }
     }
   }
 }

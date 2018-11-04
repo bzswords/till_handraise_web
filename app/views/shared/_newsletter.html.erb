@@ -1,47 +1,49 @@
 <section id="newsletter" class="Newsletter" onload="test()">
-  <div class="Newsletter__copy">
-    <h2>Sign up for our newsletter</h2>
-    <p>
-      Learn more about how to raise financially savvy kids and 
-      help us decide what features come out first
-    </p>
-  </div>
-  <div class="Newsletter__form-control FormControl">
-    <%= form_tag leads_path, id: 'newsletter-form' do %>
-      <div class="Newsletter__text-input-container">
+  <div class="Content">
+    <div class="Newsletter__copy">
+      <h2>Sign up for our newsletter</h2>
+      <p>
+        Learn more about how to raise financially savvy kids and 
+        help us decide what features come out first
+      </p>
+    </div>
+    <div class="Newsletter__form-control FormControl">
+      <%= form_tag leads_path, id: 'newsletter-form' do %>
+        <div class="Newsletter__text-input-container">
+          <%=
+            render(
+              partial: 'shared/form/text_input',
+              locals: {
+                placeholder: 'Email address',
+                name: 'email',
+                input_id: 'email-input'
+              }
+            )
+          %>
+        </div>
         <%=
           render(
-            partial: 'shared/form/text_input',
+            partial: 'shared/form/button',
             locals: {
-              placeholder: 'Email address',
-              name: 'email',
-              input_id: 'email-input'
+              value: 'Subscribe',
+              type: 'submit',
+              name: "btnSubmit"
             }
           )
         %>
+      <% end %>
+    </div>
+    <div class="Success">
+      <p class="Success__headline">
+        Thanks! We'll be in touch soon.
+      </p>
+      <p>Share Till with your community.</p>
+      <div class="Success__social">
+        <img src="<%= image_path('social/white_facebook.svg') %>" alt="Facebook" />
+        <a href="https://twitter.com/intent/tweet?text=Check out Till: a better way to give your kids money. https://www.tillfinancial.io&source=webclient">
+          <img src="<%= image_path('social/white_twitter.svg') %>" alt="Twitter" />
+        </a>
       </div>
-      <%=
-        render(
-          partial: 'shared/form/button',
-          locals: {
-            value: 'Subscribe',
-            type: 'submit',
-            name: "btnSubmit"
-          }
-        )
-      %>
-    <% end %>
-  </div>
-  <div class="Success">
-    <p class="Success__headline">
-      Thanks! We'll be in touch soon.
-    </p>
-    <p>Share Till with your community.</p>
-    <div class="Success__social">
-      <img src="<%= image_path('social/white_facebook.svg') %>" alt="Facebook" />
-      <a href="https://twitter.com/intent/tweet?text=Check out Till: a better way to give your kids money. https://www.tillfinancial.io&source=webclient">
-        <img src="<%= image_path('social/white_twitter.svg') %>" alt="Twitter" />
-      </a>
     </div>
   </div>
 </section>
