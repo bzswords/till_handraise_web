@@ -1,36 +1,20 @@
-<div class="PostsHeader">
-  <h1>Latest Newsletter</h1>
-  <h3>Week of <%= DateTime.parse(@featured.published).strftime('%B %-d, %Y') %></h3>
-</div>
-
-<div class="Posts">
-  <div class="Content">
-    <main class="Posts__main">
-      <%= @featured.body.html_safe %>
-    </main>
-    <div class="Posts__other">
-      <h3>More Newsletters</h3>
-      <ul>
-        <% @posts.each do |post| %>
-        <li class="PostCard">
-          <a class="PostCard__link" href="/newsletters/<%= post.slug %>">
-            <div class="PostCard__content">
-              <img
-                class="PostCard__image"
-                src="<%= post.featured_image %>"
-              />
-              <div class="PostCard__meta">
-                <h5><%= post.title %></h5>
-                <span><%= DateTime.parse(post.published).strftime('%B %-d, %Y') %></span>
-              </div>
-            </div>
-          </a>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</div>
-
+<%=
+  render(
+    partial: 'header',
+    locals: {
+      title: 'Latest Newsletter',
+      subtitle: "Week of #{DateTime.parse(@featured.published).strftime('%B %-d, %Y')}"
+    }
+  )
+%>
+<%=
+  render(
+    partial: 'post',
+    locals: {
+      featured: @featured,
+      posts: @posts
+    }
+  )
+%>
 <%= render partial: 'shared/newsletter' %>
 <%= javascript_include_tag 'home' %>
