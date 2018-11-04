@@ -4,7 +4,10 @@
 .Posts {
   display: flex;
   justify-content: center;
-  padding: 0 20px;
+
+  @media (min-width: $desktop-width) {
+    padding: 0 20px;
+  }
 
   .Content {
     display: flex;

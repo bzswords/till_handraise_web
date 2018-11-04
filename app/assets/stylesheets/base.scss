@@ -25,6 +25,10 @@ ul {
   overflow: hidden;
 }
 
+table {
+  table-layout: fixed;
+}
+
 .parent {
   display: flex;
   align-content: center;
