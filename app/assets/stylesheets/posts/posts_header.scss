@@ -1,20 +1,33 @@
 @import "./mixins/colors";
+@import "./mixins/breakpoints";
 
 .PostsHeader {
   background-color: $tl-baby-blue;
-  padding: 40px 60px;
+  padding: 40px 20px;
+
+  @media (min-width: $desktop-width) {
+    padding: 40px 60px;
+  }
 
   h1, h3 {
     margin: 0;
   }
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
+
+    @media (min-width: $desktop-width) {
+      font-size: 40px;
+    }
   }
 
   h3 {
     color: $tl-navy;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 22px;
+
+    @media (min-width: $desktop-width) {
+      font-size: 25px;
+    }
   }
 }

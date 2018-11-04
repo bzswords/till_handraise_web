@@ -3,12 +3,17 @@
 
 .PostCard {
   display: flex;
-  min-width: 349px;
-  max-width: 349px;
+  min-width: 344px;
+  max-width: 344px;
 
-  border: solid 2px #f7f2ef;
+  margin: 5px;
   border-radius: 10px;
   box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.16);
+
+  &__content { 
+    display: flex;
+    flex-direction: column;
+  }
 
   &__link {
     text-decoration: none;
@@ -17,10 +22,14 @@
 
   &__image {
     width: 100%;
+    border-radius: 10px 10px 0 0;
   }
 
   &__meta {
     padding: 10px;
+    border: solid 2px #f7f2ef;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
 
     h5 {
       margin: 0;

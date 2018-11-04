@@ -9,11 +9,11 @@
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
+   width: 100%;
 
    li {
      text-align: center;
      padding: 20px 0;
-     width: 50%;
 
      font-size: 22px;
      font-weight: 600;
@@ -21,6 +21,7 @@
      @media (min-width: $desktop-width) {
        width: inherit;
        margin: 0 50px;
+       width: 50%;
      }
    }
   }
