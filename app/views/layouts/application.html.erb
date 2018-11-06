@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel="stylesheet">
   
     <meta name="viewport"             content="width=device-width, initial-scale=1">
-    <meta property="og:url"           content="https://test.tillfinancial.io" />
+    <meta property="og:url"           content="http://test.tillfinancial.io" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="Till" />
     <meta property="og:description"   content="A better way to give your kids money." />
@@ -41,7 +41,7 @@
     <% if flash[:notice].present? || flash[:alert].present? %>
       <%= render partial: 'shared/flash_banner' %>
     <% end %>
-    <%= render partial: 'header/index' %>
+    <%= render partial: @header_template_path %>
 
     <%= yield %>
 

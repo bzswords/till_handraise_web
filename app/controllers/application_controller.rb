@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :set_header_template
 
   def health
     ActiveRecord::Base.establish_connection
@@ -10,6 +11,12 @@ class ApplicationController < ActionController::Base
     end
 
     render json: {}, status: 200
+  end
+
+  private
+
+  def set_header_template
+    @header_template_path = 'header/index'
   end
 
 end

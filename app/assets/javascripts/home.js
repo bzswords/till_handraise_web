@@ -119,5 +119,18 @@ function mountNewsletterForm() {
   document.body.addEventListener
 }
 
+function mountFacebookDialog() {
+  function onClick() {
+    FB.ui({
+      method: 'share',
+      href: 'http://test.tillfinancial.io',
+    }, function(response){});
+  }
+
+  var fbButton = document.getElementById('fb-button');
+  fbButton.addEventListener("click", onClick);
+}
+
 initCache();
 mountNewsletterForm();
+mountFacebookDialog();
