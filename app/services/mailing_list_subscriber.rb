@@ -37,10 +37,7 @@ class MailingListSubscriber
 
   def subscribe
     if Rails.configuration.subscribe_to_mailing_list
-      client.lists.subscribe(
-        mailing_list,
-        { "email" => email }
-      )
+      client.lists.subscribe(mailing_list, { 'email' => email }, nil, 'html', false, false, true, true)
     else
       Rails.logger.info "No subscriptions in #{Rails.env} environment"
     end
