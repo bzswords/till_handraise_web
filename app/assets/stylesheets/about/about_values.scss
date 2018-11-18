@@ -6,7 +6,10 @@
   justify-content: center;
 
   width: 100%;
-  padding: 20px;
+
+  @media (min-width: $desktop-width) {
+    padding: 20px;
+  }
 
   .Content {
     display: flex;
