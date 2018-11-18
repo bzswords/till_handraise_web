@@ -39,10 +39,10 @@
   }
 
   &__list-item {
+    font-size: 20px;
     margin-bottom: 20px;
 
     @media (min-width: $desktop-width) {
-      font-size: 20px;
       margin-bottom: 30px;
     }
   }
@@ -50,6 +50,11 @@
   &__list-item-header {
     color: $tl-navy;
     font-weight: 600;
+    line-height: 25px;
+  }
+
+  &__list-item-body {
+    line-height: 25px;
   }
 
   &__image-container {

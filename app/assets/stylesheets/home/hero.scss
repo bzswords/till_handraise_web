@@ -2,9 +2,11 @@
 
 .Hero {
   position: relative;
+  margin-top: 20px;
 
   @media (min-width: $desktop-width) {
     display: flex;
+    margin-top: 0;
   }
 
   &__img-container {
