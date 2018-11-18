@@ -8,16 +8,11 @@
     <div
       class="Hero__img-container"
     >
-      <img
-        srcset="<%= image_path('home/HERO.png') %> 1019w,
-                <%= image_path('home/HERO@2x.png') %> 2038w,
-                <%= image_path('home/HERO@3x.png') %> 3057w"
-        sizes="(max-width: 800px) 800px,
-               (max-width: 1024px) 1000px,
-               1024px"
-        src="<%= image_path('home/HERO.png') %>"
-        alt="Till is a better way to give your kids money."
-      >
+      <picture>
+        <source media="(max-width: 830px)" srcset="<%= image_path('home/HERO-414.png') %>, <%= image_path('home/HERO-414@2x.png') %> 2x, <%= image_path('home/HERO-414@3x.png') %> 3x">
+        <source media="(min-width: 831px)" srcset="<%= image_path('home/HERO-1440.png') %>, <%= image_path('home/HERO-1440@2x.png') %> 2x, <%= image_path('home/HERO-1440@3x.png') %> 3x">
+        <img src="<%= image_path('home/HERO-1440.png') %>" alt="Family sitting on sofa">
+      </picture>
     </div>
   </div>
 </section>
