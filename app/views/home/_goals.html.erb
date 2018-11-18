@@ -4,16 +4,11 @@
       class="Goals__image-container"
       alt="Placeholder"
     >
-    <img
-      srcset="<%= image_path('home/goals.png') %> 425w,
-              <%= image_path('home/goals@2x.png') %> 850w,
-              <%= image_path('home/goals@3x.png') %> 1275w"
-      sizes="(max-width: 800px) 800px,
-             (max-width: 1024px) 1000px,
-             1024px"
-      src="<%= image_path('home/goals.png') %>"
-      alt="Till is a better way to give your kids money."
-     >
+      <picture>
+        <source media="(max-width: 830px)" srcset="<%= image_path('home/goals.png') %>">
+        <source media="(min-width: 831px)" srcset="<%= image_path('home/goals.png') %>, <%= image_path('home/goals@2x.png') %> 2x, <%= image_path('home/goals@3x.png') %> 3x">
+        <img src="<%= image_path('home/goals.png') %>" alt="Family happy together">
+      </picture>
     </div>
     <div class="Goals__copy">
       <h3>Let's make sure every child develops a healthy relationship with money</h3>
