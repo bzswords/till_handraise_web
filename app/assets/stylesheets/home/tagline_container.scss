@@ -8,8 +8,8 @@
 
   &__root {
     position: relative;
-    max-width: 350px;
-    min-width: 350px;
+    width: 90%;
+    max-width: 385px;
 
     @media (min-width: $desktop-width) {
       position: absolute;

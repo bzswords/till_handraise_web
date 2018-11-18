@@ -1,5 +1,9 @@
+@import './mixins/breakpoints';
+
 .AboutHeader {
-  margin-top: 20px;
+  @media (min-width: $desktop-width) {
+    margin-top: 20px;
+  }
 
   .Content {
     max-width: 600px;

@@ -14,16 +14,28 @@
   padding: 0 27px;
   transition: .2s;
 
+  .HeaderNav {
+    display: none;
+  }
+
   @media (min-width: $desktop-width) {
     padding: 0 43px;
+
+    .HeaderNav {
+      display: block;
+    }
   }
 
   &-mobile {
-    margin-bottom: 210px;
+    padding-bottom: 210px;
     overflow: visible;
 
     @media (min-width: $desktop-width) {
       margin-bottom: 0;
+    }
+
+    .HeaderNav {
+      display: block;
     }
   }
 
