@@ -70,6 +70,44 @@ But if needed I would use RSpec.
 
 Once you reach that point, I would recommend [setting up the eb cli](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html). It's super easy to use once set up...all you have to do is run `eb deploy` and it will handle the rest.
 
+### Staging
+
+The `staging1` branch is the dedicated branch for the staging environment. This means we have to make sure that Elastic Beanstalk understands that when we are deploying from the staging1 branch, we want to push the changes to the staging environment, not production. To do this:
+
+1) Switch to the staging1 branch
+
+```
+> git checkout staging1
+```
+
+2) Configure eb to push that branch to the staging1 environment
+
+```
+> eb use staging1
+```
+
+If you look in your .elasticbeanstalk/config.yml file, you should see the mapping between branch and environment.
+
+From now on, if you want to push changes to staging1, get your changes on the staging1 branch, check it out locally, and run `eb deploy`.
+
+### Production
+
+Make sure eb is configured to push master to the production environment. If not configured:
+
+1) Check out master
+
+```
+git checkout master
+```
+
+2) Configure eb to push that branch to the production environment
+
+```
+eb use production
+```
+
+### Alternative to EB CLI
+
 Alternatively you can use the Elastic Beanstalk dashboard in the AWS console. There you will be able to manage environments and upload compressed application versions for deployment.
 
 ## Built With
