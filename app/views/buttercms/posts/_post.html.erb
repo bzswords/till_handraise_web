@@ -5,6 +5,7 @@
         <%= featured.body.html_safe %>
       </div>
     </main>
+    <% if posts.present? %>
     <div class="Posts__other">
       <h3>More Newsletters</h3>
       <ul>
@@ -23,5 +24,6 @@
         <% end %>
       </ul>
     </div>
+    <% end %>
   </div>
 </div>
