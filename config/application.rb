@@ -17,8 +17,8 @@ module TillHandraiseWeb
     # the framework and any gems in your application.
 
     config.mailchimp         = ActiveSupport::OrderedOptions.new
-    config.mailchimp.api_key = Rails.application.credentials.shared[:mailchimp][:key]
-    config.mailchimp.list_id = Rails.application.credentials[Rails.env.to_sym][:mailchimp][:list_id]
+    config.mailchimp.api_key = ENV['MAILCHIMP_KEY'] #Rails.application.credentials.shared[:mailchimp][:key]
+    config.mailchimp.list_id = "1f5cae62f7" #Rails.application.credentials[Rails.env.to_sym][:mailchimp][:list_id]
 
     config.subscribe_to_mailing_list = false
   end
