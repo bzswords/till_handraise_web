@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if Rails.env.production? %>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<%= Rails.configuration.google_analytics_id %>"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', '<%= Rails.configuration.google_analytics_id %>');
+      </script>
+    <% end %>
+
     <title>Till</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

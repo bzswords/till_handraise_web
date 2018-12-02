@@ -20,6 +20,8 @@ module TillHandraiseWeb
     config.mailchimp.api_key = ENV['MAILCHIMP_KEY'] #Rails.application.credentials.shared[:mailchimp][:key]
     config.mailchimp.list_id = "1f5cae62f7" #Rails.application.credentials[Rails.env.to_sym][:mailchimp][:list_id]
 
+    config.google_analytics_id = ENV['GOOGLE_ANALYTICS_ID']
+
     config.subscribe_to_mailing_list = false
   end
 end
