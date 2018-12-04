@@ -123,7 +123,7 @@ function mountFacebookDialog() {
   function onClick() {
     FB.ui({
       method: 'share',
-      href: 'http://test.tillfinancial.io',
+      href: 'https://www.tillfinancial.io',
     }, function(response){});
   }
 
